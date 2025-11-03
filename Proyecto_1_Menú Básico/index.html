@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusSphere | Dashboard de Concentración</title>
+  <link rel="icon" type="image/svg+xml" href="img/logo panelita.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@500&display=swap"
+   rel="stylesheet"
+  />
+ </head>
+ <!-- 
+    B.4: HTML Semántico. El cuerpo inicial tendrá la clase 'light-mode' 
+    por defecto, pero JS la cambiará inmediatamente si hay una preferencia guardada. 
+-->
+ <body class="light-mode">
+  <header class="main-header">
+   <div class="header-content">
+    <!-- B.2: Logo/Avatar en el Header -->
+    <img
+     src="img/logo panelita.png"
+     alt="Logo personal del desarrollador"
+     class="logo"
+    />
+
+    <!-- 
+                C.1: Botón para alternar el tema 
+                Usamos un span para el icono y un alt/aria-label para accesibilidad.
+            -->
+    <button id="theme-toggle" aria-label="Alternar entre modo claro y oscuro">
+     <span class="icon-indicator">🌙</span>
+     <span class="toggle-text">Modo Oscuro</span>
+    </button>
+   </div>
+  </header>
+
+  <main class="focus-dashboard">
+   <!-- B.3: Contenido Propio -->
+   <h1 class="main-title">
+    HTML,CSS,JS,ConPanelita <span class="version">v1.1</span>
+   </h1>
+
+   <section
+    class="task-card"
+    role="region"
+    aria-labelledby="current-task-title"
+   >
+    <h2 id="current-task-title" class="task-title">
+     Implementación del Proyecto 1
+    </h2>
+
+    <div class="task-details">
+     <p><strong>Estado:</strong> <span class="log-label">EXELENTE</span></p>
+     <p><strong>Prioridad:</strong> <span class="log-label high">ALTA</span></p>
+     <p>
+      <strong>Descripción:</strong> Finalizar el proyecto básico de menú con
+      todas las funcionalidades requeridas, y le agrege mi logo para maxima
+      personalización.
+     </p>
+    </div>
+
+    <div class="action-bar">
+     <button class="action-button primary-btn">
+      <span class="log-label">INICIAR SESIÓN (25min)</span>
+     </button>
+    </div>
+   </section>
+
+   <aside class="quick-info">
+    <h3>Notas Rápidas</h3>
+    <p>
+     Esta pagina esta hecha para poner en practica lo aprendido en clase con el
+     Papuu; saludos Papu ronal 👋.
+    </p>
+   </aside>
+  </main>
+
+  <footer class="main-footer">
+   <p>
+    &copy; 2025 JUAN DAVID GONZALEZ_PANELITA-10-03. Proyecto de Práctica
+    Front-end.
+   </p>
+  </footer>
+  <script src="main.js"></script>
+ </body>
+</html>

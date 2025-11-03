@@ -1,0 +1,227 @@
+
+:root {
+    /* Variables comunes - Independientes del tema */
+    --font-primary: 'Inter', sans-serif;
+    --font-code: 'Fira Code', monospace;
+    --max-width: 800px;
+    --transition-speed: 0.3s ease;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --border-radius: 8px;
+}
+.light-mode {
+    --bg-primary: #FAFAFA;
+    --bg-card: #FFFFFF;
+    --text-color: #212121;
+    --accent-color: #4CAF50;
+    --accent-hover: #388E3C;
+    --log-bg-color: #E0E0E0;
+    --shadow: var(--shadow-light);
+}
+.dark-mode {
+    --bg-primary: #1A1A2E;
+    --bg-card: #3B3B54;
+    --text-color: #F5F5F5;
+    --accent-color: #69F0AE;
+    --accent-hover: #00E676;
+    --log-bg-color: #5A5A72;
+    --shadow: var(--shadow-dark);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    /* E.6: Transición suave para el cambio de tema */
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------------------------- */
+/* 2. Header & Toggle Button (C.1)        */
+/* -------------------------------------- */
+
+.main-header {
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow);
+    padding:5px 0;
+}
+
+.header-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 10 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    /* B.2: Estilos para el logo/avatar (asumimos SVG o PNG) */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* E.6: Micro-interacción */
+    transition: transform 0.2s;
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+
+#theme-toggle {
+    /* Estilos del botón Toggle */
+    background-color: var(--accent-color);
+    color: var(--text-color); /* Usamos el color de texto para un mejor contraste en el botón */
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color var(--transition-speed), transform 0.1s;
+}
+
+#theme-toggle:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* B.4: Focus Style para accesibilidad con teclado */
+#theme-toggle:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+.icon-indicator {
+    font-size: 1.2em;
+}
+
+/* -------------------------------------- */
+/* 3. Main Content & Card (B.3)           */
+/* -------------------------------------- */
+
+.focus-dashboard {
+    max-width: var(--max-width);
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-grow: 1; /* Para empujar el footer hacia abajo */
+}
+
+.main-title {
+    font-size: 2.5em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+.version {
+    font-size: 0.5em;
+    font-family: var(--font-code);
+    color: var(--accent-color);
+    vertical-align: super;
+}
+
+.task-card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    margin-bottom: 30px;
+}
+
+.task-title {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--log-bg-color);
+    padding-bottom: 10px;
+}
+
+.task-details p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.log-label {
+    /* Etiqueta de estilo de código, simulando un log */
+    font-family: var(--font-code);
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background-color: var(--log-bg-color);
+    color: var(--text-color);
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+.log-label.high {
+    background-color: #FF7043; /* Naranja para Prioridad ALTA */
+    color: var(--bg-card); /* Color de fondo de la tarjeta */
+}
+
+.action-bar {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--log-bg-color);
+}
+
+.action-button {
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: var(--bg-primary); /* Contraste fuerte en el botón */
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.action-button:hover {
+    background-color: var(--accent-hover);
+}
+
+.quick-info h3 {
+    margin-bottom: 10px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 10px;
+}
+
+/* -------------------------------------- */
+/* 4. Footer (B.4) & Responsive (B.4)     */
+/* -------------------------------------- */
+
+.main-footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--log-bg-color);
+    border-top: 1px solid var(--log-bg-color);
+    margin-top: auto; /* Empuja hacia el fondo */
+}
+
+/* B.4: Responsividad simple (Mobile-first, luego ajuste) */
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 2em;
+    }
+    .header-content {
+        padding: 0 10px;
+    }
+    .toggle-text {
+        /* Oculta el texto en móviles para ahorrar espacio */
+        display: none;
+    }
+    #theme-toggle {
+        padding: 8px;
+    }
+}
