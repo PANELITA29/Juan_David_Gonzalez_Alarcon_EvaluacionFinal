@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+   Proyecto_4_Ventana de Confirmación | Confirmación de Transacción
+  </title>
+
+  <link rel="icon" type="image/svg+xml" href="img/logo panelita.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Source+Code+Pro:wght@400;700&display=swap"
+   rel="stylesheet"
+  />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ </head>
+ <body>
+  <header class="main-header">
+   <div class="header-content">
+    <img
+     src="img/logo panelita.png"
+     alt="Logo de [JUAN DAVID GONZALEZ_PANELITA-10-03]"
+     class="logo"
+    />
+    <h1 class="main-title">PanelitaPay</h1>
+   </div>
+  </header>
+
+  <main class="confirmation-center">
+   <section class="confirmation-card" role="alert" aria-live="assertive">
+    <div class="icon-success">✔️</div>
+
+    <h2 class="card-title">¡Donación Procesada Exitosamente!</h2>
+    <p class="card-subtitle">
+     Gracias por tu apoyo. Tu comprobante está listo para descargar.
+    </p>
+
+    <!-- Datos Resumen para el PDF -->
+    <div id="details-container" class="transaction-details">
+     <p>
+      <strong>Referencia:</strong>
+      <span class="data-value" data-pdf="ref">RVL-839210-2025</span>
+     </p>
+     <p>
+      <strong>Monto:</strong>
+      <span class="data-value" data-pdf="monto">$50.00 USD</span>
+     </p>
+     <p>
+      <strong>Fecha:</strong>
+      <span class="data-value" data-pdf="fecha">2025-11-05</span>
+     </p>
+    </div>
+
+    <div class="action-buttons">
+     <!-- C.4: Botón "Descargar" -->
+     <button
+      id="download-pdf"
+      class="btn primary-btn"
+      aria-label="Descargar comprobante en formato PDF"
+     >
+      <span class="icon">⬇️</span> Descargar Comprobante
+     </button>
+
+     <!-- C.4: Botón "Volver" -->
+     <button id="go-back" class="btn secondary-btn">
+      Volver a la Página Anterior
+     </button>
+    </div>
+   </section>
+
+   <p class="legal-note">
+    Asegúrate de guardar tu comprobante para cualquier aclaración futura.
+   </p>
+  </main>
+
+  <footer class="main-footer">
+   <p>
+    ResumeVault es un proyecto de [JUAN DAVID GONZALEZ_PANELITA-10-03]. &copy;
+    2025
+   </p>
+  </footer>
+  <script src="main.js"></script>
+ </body>
+</html>
