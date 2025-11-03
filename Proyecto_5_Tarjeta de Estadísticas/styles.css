@@ -1,0 +1,211 @@
+
+
+:root {
+    --font-title: 'Press Start 2P', cursive;
+    --font-body: 'Roboto Mono', monospace;
+    --color-bg: #2ECC71; /* Verde Esmeralda */
+    --color-card-bg: #FFFFFF;
+    --color-text-main: #2C3E50;
+    --color-accent-plus: #E74C3C; /* Rojo (Gasto de Puntos) */
+    --color-accent-minus: #3498DB; /* Azul (Puntos Disponibles) */
+    --color-accent-bonus: #F1C40F; /* Amarillo (Resaltado) */
+    --shadow-light: 0 8px 20px rgba(0, 0, 0, 0.2);
+    --transition-fast: 0.15s ease;
+    --card-max-width: 380px; /* B.1: Más delgado como carta */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: var(--font-body);
+  background-image: url('img/panela\ mayor.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.card-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.stat-card {
+    background-color: var(--color-card-bg);
+    width: 100%;
+    max-width: var(--card-max-width);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    border: 5px solid var(--color-accent-bonus); /* Borde de carta coleccionable */
+    transition: transform 0.3s;
+}
+
+/* Imagen de fondo del personaje (como en tu captura) */
+.card-background-image {
+    position: relative;
+    height: 250px;
+    background-size: cover;
+    background-position: center top;
+    /* Oscurecer la imagen para que resalte el avatar/texto */
+    box-shadow: inset 0 -30px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.card-avatar {
+    /* B.2: Tu logo/avatar */
+    position: absolute;
+    bottom: -30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid var(--color-card-bg);
+    box-shadow: 0 0 0 5px var(--color-accent-bonus); /* Anillo de poder */
+}
+
+.card-body {
+    padding: 40px 20px 20px; /* Ajuste para el avatar que sobresale */
+    text-align: center;
+}
+
+.card-title {
+    font-family: var(--font-title);
+    font-size: 1.2em;
+    color: var(--color-text-main);
+    margin-bottom: 5px;
+    text-align: center;
+}
+.char-class {
+    font-size: 0.7em;
+    color: var(--color-accent-bonus);
+}
+
+/* Puntos de Habilidad Disponibles */
+.points-pool {
+    font-family: sans-serif;
+    border: 1px dashed var(--color-accent-minus);
+    padding: 10px;
+    margin: 20px 0 30px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ECF0F1;
+}
+.points-value {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--color-accent-minus);
+    font-family: var(--font-code);
+}
+.spent-points {
+    color: var(--color-accent-plus); /* Color para cuando los puntos están en negativo (gastados) */
+}
+
+/* -------------------------------------- */
+/* 3. Filas de Estadísticas (C.5)         */
+/* -------------------------------------- */
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ECF0F1;
+}
+
+.stat-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.stat-name {
+    font-family: var(--font-title);
+    font-size: 0.7em;
+    flex-grow: 1; /* Empuja el control hacia la derecha */
+    text-align: left;
+    color: var(--color-accent-plus);
+}
+
+.stat-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-value {
+    font-family: var(--font-code);
+    font-weight: 700;
+    font-size: 1.1em;
+    min-width: 25px;
+    text-align: center;
+}
+
+.btn-minus, .btn-plus {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.2em;
+    transition: background-color var(--transition-fast);
+    /* B.4: Aseguramos el contraste */
+    color: var(--color-card-bg);
+}
+
+.btn-minus {
+    background-color: var(--color-accent-minus);
+}
+.btn-minus:hover {
+    background-color: #2980B9;
+}
+
+.btn-plus {
+    background-color: var(--color-accent-plus);
+}
+.btn-plus:hover {
+    background-color: #C0392B;
+}
+
+/* B.4: Accesibilidad con teclado */
+.btn-minus:focus, .btn-plus:focus {
+    outline: 2px solid var(--color-accent-bonus);
+    outline-offset: 2px;
+}
+
+.btn-reset {
+    width: 100%;
+    padding: 10px;
+    background-color: #BDC3C7;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    color: var(--color-text-main);
+    text-transform: uppercase;
+}
+.btn-reset:hover {
+    background-color: #95A5A6;
+}
+
+.main-footer {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--color-text-main);
+    border-top: 0px solid #ECF0F1;
+    margin-top: auto;
+}

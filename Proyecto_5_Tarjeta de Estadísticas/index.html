@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecte_5_|Tarjeta de Personaje Interactivo</title>
+
+  <link rel="icon" type="image/svg+xml" href="img/logo panelita.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap"
+   rel="stylesheet"
+  />
+ </head>
+ <body class="rpg-background">
+  <main class="card-center">
+   <!-- C.5: Tarjeta de Estadísticas Única -->
+   <article class="stat-card" data-card-id="player-1">
+    <div
+     class="card-background-image"
+     style="background-image: url('img/fondo\ panela.jpg');"
+    >
+     <!-- B.2: Avatar en la cabecera de la tarjeta -->
+     <img
+      src="img/fondo panela 2.jpg"
+      alt="Avatar del Personaje"
+      class="card-avatar"
+     />
+    </div>
+
+    <!-- B.3: Contenido Propio/Personalizado -->
+    <div class="card-body">
+     <h2 class="card-title">
+      Panelita <br><span class="char-class">#Caza Racompensas</span>
+     </h2>
+
+     <section class="stats-management" aria-live="assertive">
+      <!-- Contador de Puntos Disponibles (Pool de Puntos) -->
+      <div class="points-pool">
+        
+       <p>Puntos de Habilidad Disponibles:</p>
+       <span id="points-count" class="points-value" data-total="10">10</span>
+      </div>
+
+      <div class="stat-list">
+       <!-- C.5: Fila de Estadística 1 (Poder) -->
+       <div class="stat-row" data-stat="poder">
+        <img src="img/fire-png.webp" alt="Icono de Poder" class="stat-icon" />
+        <span class="stat-name">Poder</span>
+        <div class="stat-controls">
+         <!-- Botones de control -->
+         <button class="btn-minus" aria-label="Disminuir Poder" tabindex="0">
+          −
+         </button>
+         <span class="stat-value" id="stat-poder" data-value="0">0</span>
+         <button class="btn-plus" aria-label="Aumentar Poder" tabindex="0">
+          +
+         </button>
+        </div>
+       </div>
+
+       <!-- C.5: Fila de Estadística 2 (Defensa) -->
+       <div class="stat-row" data-stat="defensa">
+        <img src="img/escudo.png" alt="Icono de Defensa" class="stat-icon" />
+        <span class="stat-name">Defensa</span>
+        <div class="stat-controls">
+         <button class="btn-minus" aria-label="Disminuir Defensa">−</button>
+         <span class="stat-value" id="stat-defensa" data-value="0">0</span>
+         <button class="btn-plus" aria-label="Aumentar Defensa">+</button>
+        </div>
+       </div>
+
+       <!-- C.5: Fila de Estadística 3 (Suerte) -->
+       <div class="stat-row" data-stat="suerte">
+        <img src="img/cofre.png" alt="Icono de Suerte" class="stat-icon" />
+        <span class="stat-name">Suerte</span>
+        <div class="stat-controls">
+         <button class="btn-minus" aria-label="Disminuir Suerte">−</button>
+         <span class="stat-value" id="stat-suerte" data-value="0">0</span>
+         <button class="btn-plus" aria-label="Aumentar Suerte">+</button>
+        </div>
+       </div>
+      </div>
+     </section>
+    </div>
+
+    <button id="reset-stats" class="btn-reset">Reiniciar Puntos</button>
+   </article>
+  </main>
+
+  <footer class="main-footer">
+   <p>
+    EvoluStat. Asignación de Puntos de Habilidad. &copy; 2025 JUAN DAVID
+    GONZALEZ_PANELITA-10-03
+   </p>
+  </footer>
+
+  <script src="main.js"></script>
+ </body>
+</html>
