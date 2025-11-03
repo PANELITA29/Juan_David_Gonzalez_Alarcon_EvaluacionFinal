@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderStack | Itinerario de Viaje Interactivo</title>
+  <link rel="icon" type="image/svg+xml" href="img/logo panelita.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap"
+   rel="stylesheet"
+  />
+ </head>
+ <body>
+  <header class="main-header">
+   <div class="header-content">
+    <img
+     src="img/logo panelita.png"
+     alt="Logo personal de [Juan_David_Gonzalez_Alarcon]"
+     class="logo"
+    />
+    <h1 class="main-title">
+     WanderStack <span class="subtitle">Destinos Soñados</span>
+    </h1>
+   </div>
+  </header>
+
+  <main class="container">
+   <section class="destination-stack-area" aria-label="Selección de Destinos">
+    <h2>Selecciona tu próxima Aventura</h2>
+    <div class="stack-wrapper">
+     <div
+      class="destination-card"
+      tabindex="0"
+      role="button"
+      data-name="Kioto, Japón"
+      data-image="kyoto.jpg"
+      data-details="La ciudad de los mil templos y los cerezos en flor."
+     >
+      <img
+       src="img/japon.jpg"
+       alt="Pagoda y cerezos en Kioto, Japón"
+       class="card-image"
+      />
+      <div class="card-info">Kioto, Japón</div>
+     </div>
+
+     <div
+      class="destination-card"
+      tabindex="0"
+      role="button"
+      data-name="Santorini, Grecia"
+      data-image="santorini.jpg"
+      data-details="Casas blancas y azules colgando sobre el Mar Egeo."
+     >
+      <img
+       src="img/grecia.jpg"
+       alt="Casas blancas y cúpulas azules en Santorini, Grecia"
+       class="card-image"
+      />
+      <div class="card-info">Santorini, Grecia</div>
+     </div>
+
+     <div
+      class="destination-card"
+      tabindex="0"
+      role="button"
+      data-name="Parque Nacional Banff, CAN"
+      data-image="banff.jpg"
+      data-details="Montañas rocosas, lagos turquesa y vida salvaje."
+     >
+      <img
+       src="img/canada lago.jpg"
+       alt="Lago Moraine en el Parque Nacional Banff, Canadá"
+       class="card-image"
+      />
+      <div class="card-info">Parque Nacional Banff, CAN</div>
+     </div>
+
+     <div
+      class="destination-card"
+      tabindex="0"
+      role="button"
+      data-name="Marrakech, Marruecos"
+      data-image="marrakech.jpg"
+      data-details="Zocos vibrantes, especias y arquitectura islámica."
+     >
+      <img
+       src="img/marruecos.jpg"
+       alt="Mercado bullicioso en Marrakech, Marruecos"
+       class="card-image"
+      />
+      <div class="card-info">Marrakech, Marruecos</div>
+     </div>
+    </div>
+
+    <p class="instruction">
+     Haz clic en una tarjeta para añadir el destino a tu itinerario. ¡Planea tu
+     ruta!
+    </p>
+   </section>
+   <section class="itinerary-area" aria-label="Itinerario Seleccionado">
+    <h2 id="itinerary-count-title">🗺️ Tu Itinerario (0 Destinos)</h2>
+    <ul id="itinerary-list" class="itinerary-list">
+     <li class="empty-state">
+      Tu itinerario está vacío. Selecciona un destino.
+     </li>
+    </ul>
+   </section>
+  </main>
+
+  <footer class="main-footer">
+   <p>
+    Utiliza esta herramienta para visualizar y organizar tu Bucket List de
+    viajes. &copy; 2025  JUAN DAVID GONZALEZ_PANELITA-10-03.
+   </p>
+  </footer>
+  <script src="main.js"></script>
+ </body>
+</html>
