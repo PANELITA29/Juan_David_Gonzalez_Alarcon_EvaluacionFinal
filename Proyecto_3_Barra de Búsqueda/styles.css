@@ -1,0 +1,208 @@
+/* -------------------------------------- */
+/* 1. Reset Básico & Variables CSS (B.1)  */
+/* -------------------------------------- */
+
+:root {
+    --font-title: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --color-bg: #0A0A2A; /* Fondo Negro Azulado (Espacio) */
+    --color-text-main: #E0E6F7; /* Blanco Azulado */
+    --color-accent-neon: #4DFFB9; /* Verde Neón para resaltado */
+    --color-card-bg: #151540; /* Púrpura Oscuro para tarjetas */
+    --color-title: #8C9EFF; /* Azul Púrpura Claro */
+    --shadow-neon: 0 0 10px rgba(77, 255, 185, 0.6); /* Sombra para el efecto neón */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    min-height: 100vh;
+    padding-bottom: 50px; /* Espacio para el footer */
+}
+
+/* E.6: Fondo visual de estrellas */
+.starry-background {
+    /* Simulación simple de estrellas con gradiente radial */
+    background-image: 
+        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.2) 1px, transparent 0),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.3) 1px, transparent 0),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+    background-size: 1500px 1500px;
+}
+
+/* -------------------------------------- */
+/* 2. Header & Layout                     */
+/* -------------------------------------- */
+
+.main-header {
+    background-color: rgba(0, 0, 0, 0.3); /* Transparencia para ver el fondo */
+    padding: 15px 0;
+    border-bottom: 2px solid var(--color-accent-neon);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    margin-right:25px;
+    /* Efecto neón en el logo */
+    filter: drop-shadow(0 0 10px var(--color-accent-neon));
+    transition: filter 0.5s;
+}
+
+.main-title {
+    font-family: var(--font-title);
+    font-size: 1.8em;
+    color: var(--color-title);
+}
+.subtitle {
+    font-family: var(--font-body);
+    font-size: 0.6em;
+    font-weight: 400;
+    color: var(--color-accent-neon);
+    vertical-align: middle;
+}
+
+.main-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.intro-text {
+    margin-bottom: 25px;
+    text-align: center;
+    font-style: italic;
+    color: var(--color-title);
+}
+
+/* -------------------------------------- */
+/* 3. Barra de Búsqueda (C.3)             */
+/* -------------------------------------- */
+
+#search-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    border: 2px solid var(--color-title);
+    border-radius: 8px;
+    background-color: var(--color-card-bg);
+    color: var(--color-text-main);
+    margin-bottom: 15px;
+    transition: all 0.3s;
+}
+
+#search-input::placeholder {
+    color: rgba(224, 230, 247, 0.5); /* Placeholder más suave */
+}
+
+/* B.4: Focus y efecto Neón */
+#search-input:focus {
+    outline: none;
+    border-color: var(--color-accent-neon);
+    box-shadow: var(--shadow-neon);
+}
+
+.results-info {
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--color-accent-neon);
+    margin-bottom: 30px;
+    font-family: var(--font-title);
+    letter-spacing: 1px;
+}
+
+/* -------------------------------------- */
+/* 4. Contenedor de Resultados (C.3)      */
+/* -------------------------------------- */
+
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.result-card {
+    background-color: var(--color-card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--color-title);
+    transition: transform 0.2s;
+}
+
+.result-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+    font-family: var(--font-title);
+    color: var(--color-title);
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+.card-type {
+    font-size: 0.8em;
+    color: var(--color-accent-neon);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* C.3: Estilo para el texto resaltado (el match de la búsqueda) */
+.highlight {
+    background-color: var(--color-accent-neon);
+    color: var(--color-bg);
+    font-weight: 700;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 30px;
+    color: var(--color-accent-neon);
+    border: 1px dashed var(--color-accent-neon);
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+/* -------------------------------------- */
+/* 5. Footer & Responsive (B.4)           */
+/* -------------------------------------- */
+
+.main-footer {
+    position: fixed; /* Mantenemos el footer en la parte inferior */
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.75em;
+    color: rgba(224, 230, 247, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+    .results-container {
+        /* Una sola columna en móvil */
+        grid-template-columns: 1fr;
+    }
+    .main-title {
+        font-size: 1.4em;
+    }
+}

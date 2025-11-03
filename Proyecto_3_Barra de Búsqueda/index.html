@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto_3_Catálogo Estelar Interactivo</title>
+
+  <link rel="icon" type="image/svg+xml" href="img/logo panelita.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Roboto:wght@400;700&display=swap"
+   rel="stylesheet"
+  />
+ </head>
+ <body class="starry-background">
+  <header class="main-header">
+   <div class="header-content">
+    <img
+     src="img/logo panelita.png"
+     alt="Logo de [JUAN DAVID GONZALEZ_PANELITA-10-03]"
+     class="logo"
+    />
+    <h1 class="main-title">
+     AstroFilter <span class="subtitle">Catálogo Estelar</span>
+    </h1>
+   </div>
+  </header>
+
+  <main class="main-content">
+   <p class="intro-text">
+    Explora nuestro catálogo estelar. Ingresa el nombre de un planeta, nebulosa
+    o galaxia:
+   </p>
+
+   <section class="search-area" role="search">
+    <input
+     type="text"
+     id="search-input"
+     placeholder="Ej: Andrómeda, Júpiter, Vía Láctea..."
+     aria-label="Introduce tu término de búsqueda"
+    />
+    <p id="results-info" class="results-info">
+     Total de elementos en catálogo: 10
+    </p>
+   </section>
+
+   <section class="results-area" aria-live="polite">
+    <!-- C.3: Contenedor donde se mostrarán los resultados -->
+    <div id="results-container" class="results-container">
+     <!-- Los resultados serán insertados aquí por JavaScript -->
+    </div>
+
+    <p id="empty-state" class="empty-state" style="display: none">
+     No se encontraron coincidencias. Intenta con otro término.
+    </p>
+   </section>
+  </main>
+
+  <footer class="main-footer">
+   <p>
+    Datos proporcionados por JUAN DAVID GONZALEZ_PANELITA-10-03 . Proyecto de
+    Filtrado de Datos Front-end. &copy; 2025
+   </p>
+  </footer>
+  <script src="main.js"></script>
+ </body>
+</html>
